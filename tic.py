@@ -45,19 +45,14 @@ def playerInput(board):
          print("spot taken.")
 
 
-
+def place_marker(board, marker, position):
+    board[position] = marker
 # check for win or tie
-def checkHorizontle(board):
-    global winner
-    if board[0] == board[1] == board[2] and board[0] != "-":
-        winner = board[0]
-        return True
-    elif board[3] == board[4] == board[5] and board[3] != "-":
-        winner = board[3]
-        return True
-    elif board[6] == board[7] == board[8] and board[6] != "-":
-        winner = board[6]
-        return True
+def win_check (board, marker):
+    return ((board[1] == board[2] == board[3] == marker) or (board[4] == board[5] == board[6] == marker) or 
+           (board[7] == board[8] == board[9] == marker) or (board[1] == board[4] == board[7] == marker) or
+           (board[2] == board[5] == board[8] == marker) or (board[3] == board[6] == board[9] == marker) or
+           (board[1] == board[5] == board[9] == marker) or (board[3] == board[5] == board[7] == marker))
 
 
 #Switch players for now
