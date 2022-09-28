@@ -107,7 +107,7 @@ def IfTie(board):
     global gameRunning
     if "-" not in board:
         printBoard(board)
-        print("It is a tie!")
+        print("tie!")
         gameRunning = False
 
 
