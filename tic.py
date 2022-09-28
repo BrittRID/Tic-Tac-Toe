@@ -11,6 +11,7 @@ Author: Brittany Ridley
 
 import random
 
+#If I write pass the def main allows my code to run. 
 def main():
     pass
 
@@ -49,8 +50,8 @@ def place_marker(board, marker, position):
 
 
 
-# if win or tie
-def checkHorizontle(board):
+# win or tie
+def checkHor(board):
     global winner
     if board[0] == board[1] == board[2] and board[0] != "-":
         winner = board[0]
@@ -87,7 +88,7 @@ def checkDiag(board):
 
 def IfWin(board):
     global gameRunning
-    if checkHorizontle(board):
+    if checkHor(board):
         printBoard(board)
         print(f"The winner is {winner}!")
         gameRunning = False
@@ -110,7 +111,7 @@ def IfTie(board):
         gameRunning = False
 
 
-#Switch players for now
+#next players for now
 def nextPlayer():
     global Player
     if Player == "X":
